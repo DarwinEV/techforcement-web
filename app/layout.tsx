@@ -1,11 +1,23 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Lato } from "next/font/google"
 import "./globals.css"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { Header } from "@/components/global/header"
+import { Footer } from "@/components/global/footer"
+import { SmoothScroller } from "@/components/global/smooth-scroller"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { FloatingDots } from "@/components/floating-dots"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-lato",
+})
 
 export const metadata: Metadata = {
   title: "Techforcement - Expert Web Design & Business Services",
@@ -51,10 +63,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <body className={`${inter.variable} ${lato.variable} font-body bg-primary text-primary-foreground`}>
+        <ScrollToTop />
+        <FloatingDots />
+        <SmoothScroller>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </SmoothScroller>
       </body>
     </html>
   )
