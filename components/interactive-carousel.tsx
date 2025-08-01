@@ -9,8 +9,8 @@ const caseStudies = [
     image: "/BenavidesLandscapingPageImage.png",
   },
   {
-    title: "Coastal Cabinetry NJ",
-    slug: "coastal-cabinetry-nj",
+    title: "Coastal Cabinetry",
+    slug: "coastal-cabinetry",
     image: "/CoastalCabinetryPageImage.png",
   },
   {

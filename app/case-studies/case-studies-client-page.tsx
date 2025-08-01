@@ -47,11 +47,11 @@ export default function CaseStudiesClientPage() {
   }, []);
 
   return (
-    <div className="bg-primary text-primary-foreground min-h-screen">
+    <div className="min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-accent">Our Work</h1>
-          <p className="mt-6 text-lg leading-8 text-neutral">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-gray-900">Our Work</h1>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
             We've helped businesses of all sizes achieve their goals. Here are a few of our success stories.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function CaseStudiesClientPage() {
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
           {caseStudies.map((project) => (
             <Link href={`/case-studies/${project.slug}`} key={project.slug} className="group">
-              <div className="relative overflow-hidden rounded-lg bg-gray-900 transition-all duration-300 hover:scale-105">
+              <div className="relative overflow-hidden rounded-lg bg-white/80 backdrop-blur-sm border border-gray-200/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 {/* Animated Glow Effect */}
                 <div className="absolute -inset-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" 
                      style={{
@@ -69,7 +69,7 @@ export default function CaseStudiesClientPage() {
                      }} />
                 
                 {/* Main card content */}
-                <div className="relative bg-gray-900 rounded-lg overflow-hidden">
+                <div className="relative bg-white rounded-lg overflow-hidden">
                   <div className="aspect-[4/3] relative">
                     <Image
                       src={project.image}
@@ -81,16 +81,16 @@ export default function CaseStudiesClientPage() {
                   </div>
                   
                   <div className="p-6">
-                    <span className="inline-block bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-bold mb-3">
+                    <span className="inline-block bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-3">
                       {project.category}
                     </span>
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-neutral mb-4">
+                    <p className="text-gray-600 mb-4">
                       {project.description}
                     </p>
-                    <div className="flex items-center text-accent font-bold group-hover:text-accent/90 transition-colors duration-300">
+                    <div className="flex items-center text-blue-600 font-bold group-hover:text-blue-700 transition-colors duration-300">
                       View Case Study
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </div>

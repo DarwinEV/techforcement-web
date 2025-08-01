@@ -7,5 +7,9 @@ export const metadata: Metadata = {
 }
 
 export default function CaseStudiesPage() {
-  return <CaseStudiesClientPage />
+  return (
+    <div className="bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
+      <CaseStudiesClientPage />
+    </div>
+  )
 }

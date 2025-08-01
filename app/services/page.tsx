@@ -43,28 +43,28 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-primary text-primary-foreground">
+    <div className="bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-accent">Our Services</h1>
-          <p className="mt-6 text-lg leading-8 text-neutral">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-gray-900">Our Services</h1>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
             We offer a comprehensive suite of services to help you establish and grow your online presence.
           </p>
         </div>
 
         <div className="mt-20 space-y-16">
           {services.map((service) => (
-            <Card key={service.id} id={service.id} className="bg-neutral-900 border-neutral-800 overflow-hidden lg:grid lg:grid-cols-3 lg:gap-x-8">
-              <div className="lg:col-span-1 flex items-center justify-center p-8 bg-accent/10">
-                  <service.icon className="h-24 w-24 text-accent" />
+            <Card key={service.id} id={service.id} className="bg-white/80 backdrop-blur-sm border-gray-200/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden lg:grid lg:grid-cols-3 lg:gap-x-8">
+              <div className="lg:col-span-1 flex items-center justify-center p-8 bg-gradient-to-br from-blue-50 to-purple-50">
+                  <service.icon className="h-24 w-24 text-blue-600" />
               </div>
               <div className="lg:col-span-2 p-8">
-                <h2 className="text-3xl font-bold text-accent">{service.title}</h2>
-                <p className="mt-4 text-lg text-neutral">{service.description}</p>
+                <h2 className="text-3xl font-bold text-gray-900">{service.title}</h2>
+                <p className="mt-4 text-lg text-gray-600">{service.description}</p>
                 <ul className="mt-6 grid grid-cols-2 gap-4">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-neutral">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3" />
+                    <li key={feature} className="flex items-center text-gray-700">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3" />
                       {feature}
                     </li>
                   ))}
@@ -74,13 +74,13 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        <div className="mt-24 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ready to Discuss Your Project?</h2>
-            <p className="mt-6 text-lg leading-8 text-neutral">
+        <div className="mt-24 text-center bg-gray-900/10 backdrop-blur-sm border border-gray-200/30 rounded-2xl p-12">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">Ready to Discuss Your Project?</h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
                 Contact us today for a free consultation and let's talk about how we can help your business succeed.
             </p>
             <div className="mt-10">
-                <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-4 text-lg transition-transform duration-200 hover:scale-105">
+                <Button size="lg" asChild className="bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-4 text-lg transition-transform duration-200 hover:scale-105">
                     <Link href="/contact">
                         Get a Free Quote
                         <ArrowRight className="ml-2 h-5 w-5" />

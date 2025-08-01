@@ -19,7 +19,7 @@ const formSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters."),
 })
 
-export default function ContactClient() {
+export default function ContactClientPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -53,7 +53,7 @@ export default function ContactClient() {
   }
 
   return (
-    <div className="bg-primary text-primary-foreground">
+    <div className="bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32"
         variants={containerVariants}
@@ -62,28 +62,29 @@ export default function ContactClient() {
       >
         <div className="grid lg:grid-cols-2 gap-x-16">
           <motion.div className="flex flex-col justify-center" variants={itemVariants}>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-accent">Contact Us</h1>
-            <p className="mt-6 text-xl leading-8 text-neutral">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-gray-900">Contact Us</h1>
+            <p className="mt-6 text-xl leading-8 text-gray-600">
               Have a project in mind? We'd love to hear from you. Fill out the form or use the contact information below to get in touch.
             </p>
             <div className="mt-12 space-y-6">
               <div className="flex items-center space-x-4">
-                <Mail className="h-6 w-6 text-accent" />
-                <a href="mailto:hello@techforcement.com" className="text-lg text-neutral hover:text-accent transition-colors">hello@techforcement.com</a>
+                <Mail className="h-6 w-6 text-blue-600" />
+                <a href="mailto:hello@techforcement.com" className="text-lg text-gray-600 hover:text-blue-600 transition-colors">hello@techforcement.com</a>
               </div>
               <div className="flex items-center space-x-4">
-                <Phone className="h-6 w-6 text-accent" />
-                <span className="text-lg text-neutral">(555) 123-4567</span>
+                <Phone className="h-6 w-6 text-blue-600" />
+                <span className="text-lg text-gray-600">(555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-4">
-                <MapPin className="h-6 w-6 text-accent" />
-                <span className="text-lg text-neutral">Serving all 50 US States</span>
+                <MapPin className="h-6 w-6 text-blue-600" />
+                <span className="text-lg text-gray-600">Serving all 50 US States</span>
               </div>
             </div>
           </motion.div>
           <motion.div className="mt-12 lg:mt-0" variants={itemVariants}>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <div className="bg-white/80 backdrop-blur-sm border border-gray-200/60 shadow-lg rounded-2xl p-8">
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
@@ -159,9 +160,10 @@ export default function ContactClient() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg">Submit</Button>
-              </form>
-            </Form>
+                  <Button type="submit" size="lg" className="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold text-lg">Submit</Button>
+                </form>
+              </Form>
+            </div>
           </motion.div>
         </div>
       </motion.div>
