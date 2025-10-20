@@ -14,19 +14,19 @@ const caseStudies = [
       category: "Web Design + SEO",
       link: "https://benavideslandscaping.com",
       challenge: "The client had an outdated website that was not mobile-friendly and had poor search engine visibility. They were not generating any leads from their online presence.",
-      solution: "We designed and developed a new, modern website with a focus on user experience and mobile-first design. We also implemented a comprehensive local SEO strategy to improve their search engine rankings.",
-      results: "Within 3 months of launching the new site, the client saw a 400% increase in organic traffic and a 250% increase in lead generation. They are now ranked in the top 3 for their target keywords in their local area."
+      solution: "We created a professional, modern website that establishes a strong online presence tailored specifically for pursuing government contracts and bidding opportunities. The site emphasizes credibility, showcases qualifications, and presents the business as a reliable partner for municipal and state projects. We implemented strategic SEO targeting government procurement searches and integrated features that demonstrate the company's readiness for public sector work.",
+      results: "The client now has a professional, government-ready online presence that clearly communicates qualifications, certifications, and past work—positioning them to pursue and win public-sector contracts and bids."
     },
     {
       title: "Coastal Cabinetry",
       slug: "coastal-cabinetry",
-      description: "Luxury cabinetry website with portfolio showcase.",
+      description: "Online catalog showcasing cabinetry with phone-order (call-to-order) flow.",
       image: "/CoastalCabinetryPageImage.png",
       category: "Web Design",
       link: "https://coastalcabinetrynj.com",
-      challenge: "The client wanted to sell their custom cabinetry online, but their existing website did not have e-commerce functionality. They needed a way for customers to visualize and order custom cabinets.",
-      solution: "We built a custom e-commerce platform with a powerful product configurator that allows customers to choose from a variety of styles, finishes, and hardware. The platform also includes a secure payment gateway and order management system.",
-      results: "The new e-commerce platform has been a huge success, with online sales increasing by 150% in the first 6 months. The product configurator has also helped to reduce the number of customer service inquiries."
+      challenge: "The client wanted a simple way for customers to browse cabinetry and place orders by phone, but their existing site lacked a clear catalog and call-first ordering.",
+      solution: "We designed a clean, mobile-first online catalog (no ecommerce). Each product page highlights finishes, sizes, and pricing guidance, and includes a prominent click-to-call button, business hours, and availability so customers can easily call to place orders or request a quote.",
+      results: "The site now functions as an easy-to-use catalog with a phone-first ordering flow, improving customer confidence and making it straightforward to place orders by phone."
     },
     {
       title: "Optima Clean",
@@ -48,7 +48,7 @@ const caseStudies = [
       link: "https://bidagent-ai.vercel.app/",
       challenge: "The construction bidding process is highly competitive and time-consuming. The client wanted to create a software solution that would help contractors save time and win more bids.",
       solution: "We developed an AI-powered SaaS platform that automates the bidding process. The platform uses machine learning to analyze project data and generate accurate bids in a fraction of the time it would take to do manually.",
-      results: "BidAgent AI has been adopted by over 500 contractors in the first year. The platform has helped them to reduce their bidding time by an average of 75% and increase their win rate by 20%."
+      results: "The project is currently an MVP and not fully deployed. Early testing and prototypes aim to save contractors 3+ hours per bid on document preparation and 5+ hours per week searching for relevant bid opportunities once the platform is fully operational."
     },
 ]
 
@@ -60,7 +60,7 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const slug = params.slug
+  const { slug } = await params
   const caseStudy = caseStudies.find(cs => cs.slug === slug)
 
   if (!caseStudy) {
