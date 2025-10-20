@@ -1,30 +1,22 @@
 # Techforcement Website
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Small business services and tech consulting. We provide a range of solutions to programming and tech needs.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/darwinevs-projects/v0-techforcement-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/Vj5GYOrrerP)
+## Tech Stack
 
-## Overview
+- Framework: Next.js (App Router) with React
+- Language: TypeScript
+- Styling: Tailwind CSS (with PostCSS)
+- UI: Custom components with Lucide icons
+- Testing: Jest (configuration present)
+- Build & Deploy: Vercel
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## Site Structure
 
-## Deployment
-
-Your project is live at:
-
-**[https://vercel.com/darwinevs-projects/v0-techforcement-website](https://vercel.com/darwinevs-projects/v0-techforcement-website)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/Vj5GYOrrerP](https://v0.dev/chat/projects/Vj5GYOrrerP)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- `app/` — Next.js App Router pages and layouts (homepage, case studies, services, contact)
+- `components/` — Reusable UI components and sections (global header/footer, UI primitives)
+- `public/` — Static assets and images
+- `styles/` — Global styles
+- `hooks/` — Custom React hooks used across the app
+- `lib/` — Utility functions
+- `components/global/` — Site-level shared components (header, footer, etc.)
