@@ -8,10 +8,10 @@ import { InteractiveCarousel } from "@/components/interactive-carousel"
 import { HeroSection } from "@/components/hero-section"
 
 const stats = [
-  { value: "75+", label: "Projects Completed" },
+  { value: "5+", label: "Projects Completed" },
   { value: "100%", label: "Client Satisfaction" },
-  { value: "10+", label: "Years Experience" },
-  { value: "50+", label: "States Served" },
+  { value: "3", label: "Years Experience" },
+  { value: "3", label: "States Served" },
 ]
 
 export default function HomePage() {
