@@ -1,6 +1,7 @@
 "use client"
 
 import { useForm } from "react-hook-form"
+import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Button } from "@/components/ui/button"
@@ -30,10 +31,30 @@ export default function ContactClientPage() {
       message: "",
     },
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    // Here you would typically send the form data to your backend
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      })
+
+      if (res.ok) {
+        alert('Thanks — your message was sent.')
+        form.reset()
+      } else {
+        console.error('Contact submit failed', await res.text().catch(() => ''))
+        alert('Something went wrong sending the message. Please try again or email darwinv332@gmail.com')
+      }
+    } catch (err) {
+      console.error(err)
+      alert('Network error. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const containerVariants = {
@@ -69,11 +90,11 @@ export default function ContactClientPage() {
             <div className="mt-12 space-y-6">
               <div className="flex items-center space-x-4">
                 <Mail className="h-6 w-6 text-blue-600" />
-                <a href="mailto:hello@techforcement.com" className="text-lg text-gray-600 hover:text-blue-600 transition-colors">hello@techforcement.com</a>
+                <a href="mailto:darwinv332@gmail.com" className="text-lg text-gray-600 hover:text-blue-600 transition-colors">darwinv332@gmail.com</a>
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="h-6 w-6 text-blue-600" />
-                <span className="text-lg text-gray-600">(555) 123-4567</span>
+                <span className="text-lg text-gray-600">(908) 242-6761</span>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="h-6 w-6 text-blue-600" />
@@ -160,7 +181,7 @@ export default function ContactClientPage() {
                     </FormItem>
                   )}
                 />
-                  <Button type="submit" size="lg" className="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold text-lg">Submit</Button>
+                  <Button disabled={isSubmitting} type="submit" size="lg" className="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold text-lg">{isSubmitting ? 'Sending...' : 'Submit'}</Button>
                 </form>
               </Form>
             </div>

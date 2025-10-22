@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Sparkles } from "lucide-react"
 import Link from "next/link"
+import { useCallback } from "react"
 
 export function HeroSection() {
   return (
@@ -40,7 +41,14 @@ export function HeroSection() {
             </Link>
           </Button>
           
-          <Button variant="ghost" className="text-base px-8 py-4 h-auto text-gray-600 hover:text-gray-900 hover:scale-105 transition-transform">
+          <Button
+            variant="ghost"
+            onClick={useCallback(() => {
+              const el = document.getElementById('success-stories')
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }, [])}
+            className="text-base px-8 py-4 h-auto text-gray-600 hover:text-gray-900 hover:scale-105 transition-transform"
+          >
             <Play className="h-4 w-4 mr-2" />
             View Our Work
           </Button>

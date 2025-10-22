@@ -44,8 +44,8 @@ export default function HomePage() {
         </div>
       </section>
       
-      {/* Case Studies Section */}
-      <section className="section-spacing section-padding">
+  {/* Case Studies Section */}
+  <section id="success-stories" className="section-spacing section-padding">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="heading-lg mb-6">Success Stories</h2>
