@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Twitter, Linkedin, Mail, Zap } from "lucide-react"
+import { Github, Linkedin, Mail, Zap } from "lucide-react"
 
 export function Footer() {
   return (
@@ -19,13 +19,10 @@ export function Footer() {
                 Expert web design and business services for small to medium-sized businesses across the United States.
               </p>
               <div className="flex space-x-4">
-                <Link href="#" className="text-gray-400 hover:text-gray-600 transition-colors">
-                  <Twitter className="h-5 w-5" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-gray-600 transition-colors">
+                <Link href="https://github.com/DarwinEV" className="text-gray-400 hover:text-gray-600 transition-colors">
                   <Github className="h-5 w-5" />
                 </Link>
-                <Link href="#" className="text-gray-400 hover:text-gray-600 transition-colors">
+                <Link href="https://www.linkedin.com/in/darwin-vargas/" className="text-gray-400 hover:text-gray-600 transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </Link>
               </div>
@@ -76,12 +73,6 @@ export function Footer() {
                   <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
                     Contact
                   </Link>
-                </li>
-                <li>
-                  <a href="mailto:hello@techforcement.com" className="text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-1">
-                    <Mail className="h-3 w-3" />
-                    Get in Touch
-                  </a>
                 </li>
               </ul>
             </div>

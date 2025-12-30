@@ -1,26 +1,21 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play, Sparkles } from "lucide-react"
+import { ArrowRight, Play } from "lucide-react"
 import Link from "next/link"
 import { useCallback } from "react"
+import { FloatingCloud } from "@/components/floating-clouds"
 
 export function HeroSection() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen section-padding section-spacing bg-gradient-to-br from-slate-50 via-white to-slate-100 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center min-h-screen section-padding section-spacing bg-slate-50 overflow-hidden">
       {/* Background grid pattern */}
       <div className="absolute inset-0 grid-pattern-light opacity-30" />
       
-      {/* Floating sparkles for flair */}
-      <div className="absolute top-20 left-20 animate-bounce" style={{ animationDelay: '1s' }}>
-        <Sparkles className="h-4 w-4 text-blue-500/30" />
-      </div>
-      <div className="absolute top-32 right-32 animate-bounce" style={{ animationDelay: '2s' }}>
-        <Sparkles className="h-3 w-3 text-purple-500/30" />
-      </div>
-      <div className="absolute bottom-32 left-32 animate-bounce" style={{ animationDelay: '3s' }}>
-        <Sparkles className="h-5 w-5 text-indigo-500/30" />
-      </div>
+      {/* Floating clouds for flair */}
+      <FloatingCloud position="top-left" size="md" delay="0s" />
+      <FloatingCloud position="top-right" size="sm" delay="1s" />
+      <FloatingCloud position="bottom-left" size="lg" delay="2s" />
       
       <div className="hero-content text-center z-20 max-w-4xl mx-auto">
         <h1 className="heading-xl mb-6">

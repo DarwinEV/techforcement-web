@@ -6,6 +6,7 @@ import Link from "next/link"
 import { ServiceCards } from "@/components/service-cards"
 import { InteractiveCarousel } from "@/components/interactive-carousel"
 import { HeroSection } from "@/components/hero-section"
+import { FloatingCloud } from "@/components/floating-clouds"
 
 const stats = [
   { value: "5+", label: "Projects Completed" },
@@ -24,8 +25,12 @@ export default function HomePage() {
       <ServiceCards />
       
       {/* Stats Section */}
-      <section className="section-spacing section-padding bg-gray-50 animate-fade-in">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative section-spacing section-padding bg-slate-50 animate-fade-in overflow-hidden">
+        {/* Floating clouds */}
+        <FloatingCloud position="top-right" size="md" delay="0.5s" />
+        <FloatingCloud position="bottom-left" size="sm" delay="2s" />
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="heading-lg mb-6">Trusted by Businesses Nationwide</h2>
             <p className="body-lg">Our track record speaks for itself</p>
@@ -45,8 +50,12 @@ export default function HomePage() {
       </section>
       
   {/* Case Studies Section */}
-  <section id="success-stories" className="section-spacing section-padding">
-        <div className="max-w-7xl mx-auto">
+  <section id="success-stories" className="relative section-spacing section-padding bg-slate-50 overflow-hidden">
+        {/* Floating clouds */}
+        <FloatingCloud position="top-left" size="sm" delay="0.5s" />
+        <FloatingCloud position="center-right" size="md" delay="1.5s" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="heading-lg mb-6">Success Stories</h2>
             <p className="body-lg max-w-2xl mx-auto">
@@ -58,8 +67,12 @@ export default function HomePage() {
       </section>
       
       {/* Final CTA Section */}
-      <section className="section-spacing section-padding bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative section-spacing section-padding bg-slate-50 overflow-hidden">
+        {/* Floating clouds */}
+        <FloatingCloud position="top-right" size="sm" delay="0.5s" />
+        <FloatingCloud position="bottom-left" size="md" delay="1.5s" />
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="heading-lg mb-6">Ready to Transform Your Business?</h2>
           <p className="body-lg mb-12">
             Let's build something amazing together. Contact us today for a free consultation and discover how we can help you achieve your goals.
@@ -73,9 +86,11 @@ export default function HomePage() {
               </Link>
             </Button>
             
-            <Button variant="ghost" className="text-base px-8 py-4 h-auto text-gray-600 hover:text-gray-900">
-              <CheckCircle className="h-4 w-4 mr-2" />
-              View Our Process
+            <Button variant="ghost" className="text-base px-8 py-4 h-auto text-gray-600 hover:text-gray-900" asChild>
+              <Link href="/process" className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 mr-2" />
+                View Our Process
+              </Link>
             </Button>
           </div>
         </div>

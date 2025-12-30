@@ -31,13 +31,13 @@ const caseStudies = [
     {
       title: "Optima Clean",
       slug: "optima-clean",
-      description: "Professional service website with booking system.",
+      description: "SEO-optimized website that establishes online presence and generates qualified leads.",
       image: "/OptimaCleanPageImage.png",
-      category: "Service Business",
+      category: "Web Design + SEO",
       link: "https://optima-clean.com",
-      challenge: "The client was managing all of their bookings manually, which was time-consuming and prone to errors. They needed a more efficient way to manage their appointments and communicate with customers.",
-      solution: "We developed a custom booking system that allows customers to schedule appointments online and receive automated reminders. The system also includes a customer portal where they can view their upcoming appointments and payment history.",
-      results: "The new booking system has saved the client an average of 10 hours per week in administrative work. It has also improved the customer experience, with a 95% customer satisfaction rating."
+      challenge: "Optima Clean had limited online visibility and struggled to attract new customers through digital channels. They needed to establish a strong online presence and rank high in search results to compete in their local market.",
+      solution: "We created an SEO-optimized website designed to establish Optima Clean's professional presence and drive organic traffic. The site features strategic keyword optimization, compelling service descriptions, and local SEO tactics to rank high in search results for their target market. The site showcases their expertise and builds trust with potential customers.",
+      results: "The SEO-optimized website has successfully established Optima Clean's online presence and significantly improved their search rankings. This has resulted in a steady stream of qualified leads through organic search, allowing them to consistently acquire new customers and grow their business."
     },
     {
       title: "BidAgent AI",

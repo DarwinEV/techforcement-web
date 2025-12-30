@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react"
 import { Code, Search, Building, Zap } from "lucide-react"
 import Link from "next/link"
+import { FloatingCloud } from "@/components/floating-clouds"
 
 const services = [
   {
@@ -72,8 +73,12 @@ function ServiceCard({ service, index }) {
 
 export function ServiceCards() {
   return (
-    <div className="section-spacing section-padding animate-fade-in">
-      <div className="max-w-7xl mx-auto">
+    <div className="relative section-spacing section-padding bg-slate-50 animate-fade-in overflow-hidden">
+      {/* Floating clouds */}
+      <FloatingCloud position="top-left" size="md" delay="0s" />
+      <FloatingCloud position="center-right" size="sm" delay="1.5s" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="heading-lg mb-6 animate-slide-up">Our Services</h2>
           <p className="body-lg max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '200ms' }}>

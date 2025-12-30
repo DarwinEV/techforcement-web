@@ -34,8 +34,8 @@ export function Header() {
           </Link>
         </div>
         
-        {/* Glass bubble background - positioned to avoid logo overlap and contain button */}
-        <div className="absolute left-56 right-4 top-2 bottom-2 bg-gray-900/5 backdrop-blur-sm border border-gray-200/20 rounded-2xl shadow-sm" />
+        {/* Glass bubble background - positioned to avoid logo overlap and contain button, hidden on mobile */}
+        <div className="absolute left-56 right-4 top-2 bottom-2 bg-gray-900/5 backdrop-blur-sm border border-gray-200/20 rounded-2xl shadow-sm hidden md:block" />
         
         {/* Navigation - Grid column 2 with left padding to clear rectangle edge */}
         <nav className="hidden items-center gap-8 md:flex relative z-10 justify-start pl-6">
@@ -69,7 +69,7 @@ export function Header() {
           </Link>
         </nav>
         
-        {/* CTA Button - Grid column 3 positioned inside rectangle with margin */}
+        {/* CTA Button - Grid column 3 positioned inside rectangle with margin, menu icon with bg on mobile */}
         <div className="flex items-center gap-4 relative z-10 justify-end">
           <Button asChild className="button-primary hidden sm:inline-flex">
             <Link href="/contact">Get Started</Link>
@@ -77,7 +77,11 @@ export function Header() {
           
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="md:hidden p-2 rounded-lg bg-gray-900/5 hover:bg-gray-900/10 transition-colors"
+              >
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
